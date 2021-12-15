@@ -56,4 +56,14 @@ public class Account {
 
     }
   }
+
+  public void transfer(double value, Account fromAccount, Account toAccount) {
+    if (value <= fromAccount.balance && value > 0) {
+      fromAccount.withdraw(value);
+      toAccount.deposit(value);
+    } else {
+      System.out.println("Não foi possível concluir a transferência");
+    }
+
+  }
 }

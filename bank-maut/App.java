@@ -54,14 +54,19 @@ public class App {
     System.out.println("Número da conta: " + account2.getNumber());
 
     account2.deposit(2500.00);
-    System.out.println("Saldo da conta 1: " + account2.getBalance());
+    System.out.println("Saldo da conta 2: " + account2.getBalance());
 
     account2.withdraw(500.00);
 
     account2.deposit(750.00);
-    System.out.println("Saldo da conta 1: " + account2.getBalance());
+    System.out.println("Saldo da conta 2: " + account2.getBalance());
 
     account2.withdraw(500.00);
     System.out.println("Saldo: " + account2.getBalance());
+
+    System.out.println("=====================================");
+    account2.transfer(1000, account2, account1);
+    System.out.println("Saldo da conta 1: " + account1.getBalance());
+    System.out.println("Saldo da conta 2: " + account2.getBalance());
   }
 }
