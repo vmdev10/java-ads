@@ -1,23 +1,67 @@
+import java.time.LocalDate;
+
 import javax.security.auth.login.AccountException;
 
 public class App {
   public static void main(String[] args) {
-    Account account1 = new Account();
+    System.out.println("Número de contas no banco: " + Account.getNumberOfAccounts());
 
-    account1.branch = 123;
-    account1.number = 456;
-    account1.balance = 100;
+    System.out.println("=====================================");
+    LocalDate birthDateClient1 = LocalDate.of(2002, 8, 25);
+    ClientBank client1 = new ClientBank("Ana", "000.000.000-00", birthDateClient1, "Rua xxxx");
 
-    ClientBank client1 = new ClientBank();
-    client1.name = "Ana";
-    client1.cpf = "0123";
+    Account account1 = new Account(123456, 45, client1);
 
-    account1.clientBank = client1;
+    System.out.println("Número de contas no banco: " + Account.getNumberOfAccounts());
+    System.out.println("=====================================");
 
-    System.out.println("Agência: " + account1.branch);
-    System.out.println("Número da conta: " + account1.number);
-    System.out.println("Saldo: " + account1.balance);
-    System.out.println("Cliente da conta: " + account1.clientBank.name);
-    System.out.println("CPF do cliente: " + account1.clientBank.cpf);
+    System.out.println("Cliente 1: " + account1.getClientBank().getName());
+    System.out.println("CPF do cliente: " + account1.getClientBank().getCPF());
+    System.out.println("Data de nascimento do cliente: " + account1.getClientBank().getBirthDate());
+    System.out.println("Endereço do cliente: " + account1.getClientBank().getAddress());
+
+    System.out.println("Agência: " + account1.getBranch());
+    System.out.println("Número da conta: " + account1.getNumber());
+
+    account1.deposit(550.90);
+    System.out.println("Saldo da conta 1: " + account1.getBalance());
+
+    account1.withdraw(800);
+
+    account1.deposit(100);
+    System.out.println("Saldo da conta 1: " + account1.getBalance());
+
+    account1.withdraw(50);
+    System.out.println("Saldo: " + account1.getBalance());
+
+    System.out.println("=====================================");
+    System.out.println("Número de contas no banco: " + Account.getNumberOfAccounts());
+    System.out.println("=====================================");
+
+    LocalDate birthDateClient2 = LocalDate.of(2019, 3, 04);
+    ClientBank client2 = new ClientBank("Júlia", "111.111.111-00", birthDateClient2, "Rua yyyy");
+
+    Account account2 = new Account(000, 88, client2);
+    System.out.println("Número de contas no banco: " + Account.getNumberOfAccounts());
+    System.out.println("=====================================");
+
+    System.out.println("Cliente 2: " + account2.getClientBank().getName());
+    System.out.println("CPF do cliente: " + account2.getClientBank().getCPF());
+    System.out.println("Data de nascimento do cliente: " + account2.getClientBank().getBirthDate());
+    System.out.println("Endereço do cliente: " + account2.getClientBank().getAddress());
+
+    System.out.println("Agência: " + account2.getBranch());
+    System.out.println("Número da conta: " + account2.getNumber());
+
+    account2.deposit(2500.00);
+    System.out.println("Saldo da conta 1: " + account2.getBalance());
+
+    account2.withdraw(500.00);
+
+    account2.deposit(750.00);
+    System.out.println("Saldo da conta 1: " + account2.getBalance());
+
+    account2.withdraw(500.00);
+    System.out.println("Saldo: " + account2.getBalance());
   }
 }
