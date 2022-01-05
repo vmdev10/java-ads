@@ -4,13 +4,13 @@ public class ClientBank {
   private String name;
   private String cpf;
   private LocalDate birthDate;
-  private String address;
+  // private Address address;
 
-  public ClientBank(String name, String cpf, LocalDate birthDate, String address) {
+  public ClientBank(String name, String cpf, LocalDate birthDate) {
     this.name = name;
     this.cpf = cpf;
     this.birthDate = birthDate;
-    this.address = address;
+    // this.address = address;
   };
 
   public String getName() {
@@ -33,11 +33,11 @@ public class ClientBank {
     return this.birthDate = birthDate;
   };
 
-  public String getAddress() {
-    return this.address;
-  };
+  // public Address getAddress() {
+  // return this.address;
+  // };
 
-  public String setAddress(String address) {
-    return this.address = address;
-  };
+  // public Address setAddress(Address address) {
+  // return this.address = address;
+  // };
 }
