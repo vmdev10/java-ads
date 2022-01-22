@@ -1,7 +1,5 @@
 import java.time.LocalDate;
 
-import javax.security.auth.login.AccountException;
-
 public class App {
   public static void main(String[] args) {
     LocalDate birthDateClient1 = LocalDate.of(2002, 8, 25);
