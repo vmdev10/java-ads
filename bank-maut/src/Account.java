@@ -1,3 +1,5 @@
+package src;
+
 public class Account {
   private int branch; // Dessa forma esse atributo não é exposto para outras entidades acessarem
   private int number;

@@ -1,3 +1,5 @@
+package src;
+
 public class HomeAddress {
   private String publicPlace;
   private int number;
