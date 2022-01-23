@@ -29,12 +29,19 @@ public class Account {
     return this.clientBank;
   }
 
+  // Criando um método para acessar a classe Notification em apenas um lugar
+
+  private void sendNotification(String operation, double value) {
+    new Notification().sendEmail(operation, value);
+  }
+
   public void deposit(double value) {
     sendNotification("Depósito", value);
     if (value < 0) {
       System.out.println("Não é possível realizar esta operação!");
     } else {
       this.balance = this.balance + value;
+
       System.out.println("Valor depositado, sua conta agora tem: " + this.balance);
     }
   }
@@ -60,10 +67,5 @@ public class Account {
       System.out.println("Não foi possível concluir a transferência");
     }
 
-  }
-
-  private void sendNotification(String operation, double value) {
-    System.out.println("Notificação enviada....");
-    System.out.println("A operação realizada foi de: " + operation + ", no valor de: " + value);
   }
 }
