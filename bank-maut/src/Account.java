@@ -48,7 +48,15 @@ public class Account {
   }
 
   public void withdraw(double value) {
+    sendNotification("Saque", value);
+    if (value <= this.balance) {
+      this.balance = this.balance - value;
+      System.out.println("Valor sacado com sucesso!! Sua conta agora tem: " + this.balance);
+    } else {
+      System.out.println("Saque acima do seu limite atual!!: ");
+      System.out.println("Saldo atual: " + this.balance);
 
+    }
   }
 
   public void transfer(double value, Account fromAccount, Account toAccount) {
@@ -59,6 +67,5 @@ public class Account {
     } else {
       System.out.println("Não foi possível concluir a transferência");
     }
-
   }
 }

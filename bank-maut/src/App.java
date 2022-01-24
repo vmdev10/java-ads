@@ -51,6 +51,10 @@ public class App {
                 accountX.withdraw(1250);
                 accountX.withdraw(250);
 
+                accountY.deposit(1000);
+
+                accountY.transfer(100, accountY, accountX);
+
         }
 
 }
