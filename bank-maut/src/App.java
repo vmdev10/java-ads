@@ -31,7 +31,7 @@ public class App {
                                 + client1.getHomeAddress().get(1).getCity() + ", "
                                 + client1.getHomeAddress().get(1).getFederativeUinit());
 
-                Account accountX = new Account(001, 12345, client1);
+                CheckingAccount accountX = new CheckingAccount(001, 12345, client1);
 
                 System.out.println(
                                 "================================== Cliente 1 ========================================");
