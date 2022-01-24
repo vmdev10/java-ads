@@ -1,21 +1,9 @@
 package src;
 
-public class CheckingAccount {
-  private double overdraft;
+public class CheckingAccount extends Account {
 
-  public CheckingAccount(double overdraft) {
-    this.overdraft = overdraft;
-  }
-
-  public void deposit(double value) {
-
-  }
-
-  public void withdraw(double value) {
-
-  }
-
-  public void transfer(double value, Account fromAccount, Account toAccount) {
-
+  public CheckingAccount(int branch, int number, ClientBank clientBank) {
+    // O super faz referência à atributos e métodos da classe pai
+    super(branch, number, clientBank);
   }
 }
