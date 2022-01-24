@@ -1,6 +1,7 @@
 package src;
 
-public class Account {
+// A propriedade "abstract" faz com que não seja possível criar um objeto do tipo Conta, apenas classes filhas que extendem dessa classe 
+abstract public class Account {
   private int branch; // Dessa forma esse atributo não é exposto para outras entidades acessarem
   private int number;
   protected double balance;
