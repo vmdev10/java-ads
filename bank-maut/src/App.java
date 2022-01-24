@@ -31,7 +31,8 @@ public class App {
                                 + client1.getHomeAddress().get(1).getCity() + ", "
                                 + client1.getHomeAddress().get(1).getFederativeUinit());
 
-                CheckingAccount accountX = new CheckingAccount(001, 12345, client1);
+                CheckingAccount accountX = new CheckingAccount(001, 1, client1);
+                SavingsAccount accountY = new SavingsAccount(001, 2, client1);
 
                 System.out.println(
                                 "================================== Cliente 1 ========================================");
@@ -46,9 +47,9 @@ public class App {
                 System.out.println(
                                 "================================== Movimentações... ========================================");
 
-                accountX.deposit(2500);
-
-                accountX.withdraw(860);
+                accountX.deposit(800);
+                accountX.withdraw(1250);
+                accountX.withdraw(250);
 
         }
 

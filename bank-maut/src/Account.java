@@ -3,7 +3,7 @@ package src;
 public class Account {
   private int branch; // Dessa forma esse atributo não é exposto para outras entidades acessarem
   private int number;
-  private double balance;
+  protected double balance;
   private ClientBank clientBank;
 
   public Account(int branch, int number, ClientBank clientBank) {
@@ -30,8 +30,9 @@ public class Account {
   }
 
   // Criando um método para acessar a classe Notification em apenas um lugar
-
-  private void sendNotification(String operation, double value) {
+  // proteced significa que esse método pode ser acessado pela própria classe e
+  // pelas classes filhas.
+  protected void sendNotification(String operation, double value) {
     new Notification().sendEmail(operation, value);
   }
 
@@ -47,15 +48,7 @@ public class Account {
   }
 
   public void withdraw(double value) {
-    sendNotification("Saque", value);
-    if (value <= this.balance) {
-      this.balance = this.balance - value;
-      System.out.println("Valor sacado com sucesso!! Sua conta agora tem: " + this.balance);
-    } else {
-      System.out.println("Saque acima do seu limite atual!!: ");
-      System.out.println("Saldo atual: " + this.balance);
 
-    }
   }
 
   public void transfer(double value, Account fromAccount, Account toAccount) {
